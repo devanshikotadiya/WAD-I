@@ -1,0 +1,382 @@
+
+1. Write a javascript program to check whether entered number is prime or not.
+Code:- <html>
+       <body>
+            <h1>java script program</h1>
+            <h2>java script prime number check</h2>
+            <p>This number is check a primee number </p>
+            <p id="demo"></p>
+      <script>
+            function isprime(num) {
+                      if(num <= 1 ){
+                         return false;
+                      }
+                      if(num <= 3 ){
+                         return true;
+                      }
+                      if(num % 2 === 0 || num % 3 === 0){
+                             return false;
+                      }
+           for(let i = 5; i*i <= num; i += 6){
+               if(num % i === 0 || num % (i + 2) === 0){
+                   return false;
+               }
+           }
+           return true;
+        }     
+    let text;
+    let number = parseInt(prompt("Enter a number :"));
+    if(isNaN(number)){
+       text="please enter a valid number.";
+    }
+    else{
+    if(isprime(number)){
+        text= number+"is a prime number.";
+    }
+    else{
+       text= number+"ia not a prime number.";
+    }
+  }
+ document.getElementById("demo").innerHTML=text;
+ </script>
+ </body>
+</html>
+
+2. Write a javascript that will replace following specified value with another value in 
+string =”I will fail” replace “fail” by “pass”. 
+Code:- <html>
+       <head>
+       <body>
+            <h1>java script replace a string.</h1>
+            <h2> string :- I Will fail</h2>
+       <script>
+            var mystr ="I Will fail";
+            var newstr = mystr.replace("fail","pass");
+            document.write(newstr);
+       </script>
+    </body>
+   </head>
+  </html>
+
+3. Write a javascript program that will display current date in DD/MM/YYYY 
+formate.
+Code:- <!DOCTYPE html>
+       <html>
+       <body>
+           <h2>
+               My first java script.
+           </h2>
+           <button type="button" 
+            onclick="document.getElementById('demo').innerHTML=Date()">click me to 
+            display date and time</button>
+           <p id="demo"></p>
+   </body>
+   </html>
+
+4. Write a javascript program that will remove the duplicate element from an array.
+Code:- <!DOCTYPE html>
+       <html>
+       <body>
+            <h1>remove duplicate Array.</h1>
+     <script>
+          function removeduplicate(arr){
+              return [...new set(arr)];
+           }
+          let Array=[1,2,2,3,4,4,5,6,6,7];
+          document.write("original array:",Array+"<br>");
+          let UniqueArray=removeduplicate[Array];
+          document.write("Array without duplicates :",UniqueArray);
+   </script>
+ </body>
+</html>
+
+5. Write a javascript code to display 5 elements of array in sorted order.
+Code:- <html>
+       <head>
+       <title>
+              Array
+       </title>
+       </head>
+       <body>
+            <h1>java script</h1>
+            <h2>sorting element:</h2>
+      <script>
+            var arr1 = ["dev","bhavy","red","orange","sun"];
+            var arr2 = ["35","25","89","12","90","23"];
+            document.write("(1) Before sorting arr1 = " + arr1);
+         // document.write("<br>*****************************************");
+            document.write("<br> After sorting arr1 =" + arr1.sort());
+ 
+           document.write("<br>-----------------------------------------------");
+           document.write("<br> (2) Before sorting arr2 = " + arr2);
+         //document.write("<br>*******************************************");
+           document.write("<br> After sorting arr2 =" + arr2.sort());
+ </script>
+ </body>
+ </html>
+
+6. Write a javascript to create person object with properties firstname, lastname
+,age,eyecolor,delete eyecolor property and display remaining properties of person 
+object.
+Code:- <html>
+       <body>
+           <h1>java script person property</h1>
+           <h1 id="demo"></h1>
+      <script>
+          let person = {
+          firstname : "bhavy",
+          lastname: "ram",
+          age: "13",
+          eyecolor: "brown",
+       };
+      delete person.eyecolor;
+     document.write("After delete:(1)"+person.firstname+"(2)"+person.lastname+"(3)"+person.age+"(4)"+person.eyecolor);
+   </script>
+   </body>
+ </html>
+
+7. Create a registration form using HTML5 and validate the form using javascript.
+Code:-
+     <!DOCTYPE html>
+     <html lang="en">
+     <body>
+         <div class="wrapper">
+         <div class="title"><h1>Registration Form</h1>
+         </div>
+        <form action="POST" data-netlify="true">
+        <div class="form">
+        <div class="inputfield">
+ <label>First Name</label>
+ <input type="text" class="input" id="name" name="fname" placeholder="Enter first name" 
+maxlength="30"
+ pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
+ </div>
+ <div class="inputfield">
+ <label>Last Name</label>
+ <input type="text" class="input" id="name" name="lname" placeholder="Enter last name" 
+maxlength="30"
+ pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
+ </div>
+ <div class="inputfield" id="gender">
+ <label for="">Gender</label>
+ <input type="radio" name="gender" id="radio" value="Male">Male
+ <input type="radio" name="gender" id="radio" value="Female">Female
+ </div>
+ <div class="inputfield">
+ <label for="">Age</label>
+ <input type="text" class="input" name="age" placeholder="Enter your age" maxlength="2" 
+pattern="^[0-9]{2}$"
+ required placeholder="Enter your age" title="Enter numbers only">
+ </div>
+ <div class="inputfield">
+ <label>Password</label>
+ <input type="password" class="input" id="password" name="" placeholder="Enter your 
+password min 8 characters"
+ autocomplete="off" onkeyup='check()' pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+ title="Must contain at least one number and one uppercase and lowercase letter, and at least 
+8 or more characters"
+ maxlength="100" minlength="8" required>
+ </div>
+ <div class="inputfield">
+ <label>Confirm Password</label>
+ <input type="password" onkeyup='check()' class="input" id="confirm-password" name=""
+ placeholder="Confirm password" autocomplete="off" pattern="(?=.\d)(?=.[a-z])(?=.*[AZ]).{8,}"
+ title="Must contain at least one number and one uppercase and lowercase letter, and at least 
+8 or more characters"
+ maxlength="100" minlength="8" required>
+ </div>
+ <p id="message"></p>
+ <div class="inputfield">
+ <label for="">Phone Number</label>
+ <div class="custom-select" id="phone-codes">
+ <select id="phone-code">
+ <option value="+91">+91</option>
+ </select>
+ </div>
+ <input type="tel" class="input" name="phone-number" maxlength="10" id="phone-number"
+ placeholder="Enter your phone number" pattern="[7-9]{1}[0-9]{9}" title="Please enter 
+valid phone number">
+ </div>
+ <div class="inputfield">
+ <label>Address</label>
+ <textarea class="textarea" name="address" id="" cols="30" rows="5" placeholder="Enter 
+your address"
+ pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" maxlength="100" required></textarea>
+ </div>
+ <div class="inputfield">
+ <label>State</label>
+ <div class="custom_select">
+ <select id="state" name="state" required>
+ <option value="">--Select your state--</option>
+ <option value="Assam">Assam</option>
+ <option value="Bihar">Bihar</option>
+ <option value="Chandigarh">Chandigarh</option>
+ <option value="Daman and Diu">Daman and Diu</option>
+ <option value="Delhi">Delhi</option>
+ <option value="Goa">Goa</option>
+ <option value="Gujarat">Gujarat</option>
+ <option value="Himachal Pradesh">Himachal Pradesh</option>
+ <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+ <option value="Karnataka">Karnataka</option>
+ <option value="Kerala">Kerala</option>
+ <option value="Ladakh">Ladakh</option>
+ <option value="Punjab">Punjab</option>
+ <option value="Rajasthan">Rajasthan</option>
+ <option value="Sikkim">Sikkim</option>
+ <option value="Tamil Nadu">Tamil Nadu</option>
+ <option value="Telangana">Telangana</option>
+ <option value="Uttarakhand">Uttarakhand</option>
+ </select>
+ </div>
+ </div>
+ <div class="inputfield" required>
+ <div data-netlify-recaptcha="true"></div>
+ </div>
+ <div class="inputfield btns" id="btn">
+ <button type="submit" value="Register" class="btn" 
+onclick="checkPassword()">Register</button>
+ </div>
+ </div>
+ </form>
+ </div>
+</body>
+</html>
+
+8. Write a HTML script which display 2 radio buttons to the users for fruits and 
+vegetable and 1 option list.when user select fruits radio buton option list should 
+present only fruits names to the user & when user select vegetable radio button 
+option list should prsent only vegetable names to the user.
+code:- <html>
+       <head>
+         <title>HTML Form</title>
+       <script language="javascript" type="text/javascript">
+       function updateList(ElementValue)
+       {
+          with(document.forms.myform)
+           {
+          if(ElementValue == 1)
+            {
+              optionList[0].text="Mango";
+              optionList[0].value=1;
+              optionList[1].text="strawberry";
+              optionList[1].value=2;
+              optionList[2].text="Apple";
+              optionList[2].value=3;
+              optionList[3].text="banana";
+              optionList[3].value=4;
+              optionList[4].text="lichhi";
+              optionList[4].value=5;
+              optionList[5].text="grapes";
+              optionList[5].value=6;
+            }
+           if(ElementValue == 2)
+           {
+             optionList[0].text="Potato";
+             optionList[0].value=1;
+             optionList[1].text="Cabbage";
+             optionList[1].value=2;
+             optionList[2].text="Onion";
+             optionList[2].value=3;
+          }
+      }
+ }
+   </script>
+   </head>
+   <body>
+ <form name="myform" action="" method="post">
+ <p>
+ <select name="optionList" size="2">
+ <option value=1>Mango</option>
+ <option value=2>strawberry</option>
+ <option value=3>Apple</option>
+ <option value="4">banana</option>
+ <option value="5">lichhi</option>
+ <option value="6">grapes</option>
+ </select>
+ <br>
+ <input type="radio" name="grp1" value=1 checked="true" 
+ onclick="updateList(this.value)">Fruits
+ <input type="radio" name="grp1" value=2 
+ onclick="updateList(this.value)">Vegetables
+ <br>
+ <input name="Reset" value="Reset" type="reset">
+ </p>
+ </form>
+ </body>
+</html>
+
+9. Write a javascript that displays textboxes for accepting name & email id & a 
+submit button.wrute javascript such that when the user click on submit button
+(1)name validation (2) email id validation.
+ <html>
+<head>
+<title>Form Validation</title>
+</head>
+<body>
+<form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = 
+"return(validate());">
+<table cellspacing = "2" cellpadding = "2" border = "1">
+<tr>
+<td align = "right">Name</td>
+<td><input type = "text" name = "Name" /></td>
+</tr>
+<tr>
+<td align = "right">EMail</td>
+<td><input type = "text" name = "EMail" /></td>
+</tr>
+<tr>
+<td align = "right"></td>
+<td><input type = "submit" value = "Submit" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+<script type = "text/javascript">
+<!--
+// Form validation code will come here.
+function validate() {
+if( document.myForm.Name.value == "" ) {
+alert( "Please provide your name!" );
+document.myForm.Name.focus() ;
+return false;
+}
+if( document.myForm.EMail.value == "" ) {
+alert( "Please provide your Email!" );
+document.myForm.EMail.focus() ;
+return false;
+}
+var emailID = document.myForm.EMail.value;
+atpos = emailID.indexOf("@");
+dotpos = emailID.lastIndexOf(".");
+if (atpos < 1 || ( dotpos - atpos < 2 )) {
+alert("Please enter correct email ID")
+document.myForm.EMail.focus() ;
+return false;
+}
+return( true );
+}
+//-->
+</script>
+
+10. Write a HTML script will display dropdown list containing option such as 
+red , green,blue & yellow.write a javascript program such that when the 
+user select any option .it will change background color of web page.
+<!DOCTYPE html>
+<html>
+ <head> color </head>
+ <body>
+ <select id="colorselect">
+ <option value="red">Red</option>
+ <option value="green">Green</option>
+ <option value="blue">blue</option>
+ <option value="yellow">yellow</option>
+ </select>
+<script>
+ const colorselect = document.getElementById("colorselect");
+ colorselect.addEventListener("change",function(){
+ document.body.style.background = colorselect.value;
+ });
+</script>
+ </body>
+</html>
