@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The addEventListener() Method</h2>
+
+<p>This example adds two click events to the window.</p>
+
+<p>Click anywhere in the document.</p>
+
+<p id="demo"></p>
+
+<script>
+window.addEventListener("click", myFunction1);
+window.addEventListener("click", myFunction2);
+
+function myFunction1() {
+  document.getElementById("demo").innerHTML += "First function was executed! "
+}
+
+function myFunction2() {
+  document.getElementById("demo").innerHTML += "Second function was executed! "
+}
+</script>
+
+</body>
+</html>
+
+
+
+------------------------remove removeEventListener-------------------------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The removeEventListener() Method</h2>
+
+<p>A mousemove event handler displays a random number every time you move the mousepointer over this document.</p>
+
+<p>Click "Remove" to remove the event handler.</p>
+
+<button onclick="removeHandler()">Remove</button>
+
+<p id="demo"></p>
+
+<script>
+window.addEventListener("mousemove", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = Math.random();
+}
+
+function removeHandler() {
+  window.removeEventListener("mousemove", myFunction);
+}
+</script>
+
+</body>
+</html>
